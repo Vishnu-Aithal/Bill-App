@@ -1,7 +1,7 @@
 const outputContainer = document.querySelector(".output-container");
 const totalCostRoundtrripDisplay = document.querySelector("#total-cost-roundtrip");
 const costPerPersonDisplay = document.querySelector("#cost-per-person-roundtrip");
-const inputs = document.querySelectorAll(".input");
+const inputs = document.querySelectorAll("input");
 
 
 inputs.forEach(input => input.previousValidValue = "")
