@@ -14,7 +14,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Expense Calculator</a>
+            <a class="navbar-brand" href="#">Fuel Expense Calculator</a>
             <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -33,58 +33,70 @@
         </div>
     </nav>
 
-    <div class="container bg-dark">
-
-        <label class="bg-primary" for="distance">Distance</label>
-        <div class="input-group mb-3">
-            <input type="number" min="1" step="0.01" class="form-control" id="distance" aria-label="Distance in km">
-            <span class="input-group-text">km</span>
+    <div class="container-main">
+        <div class="row">
+            <div class="col-6">
+                <div class="container bg-dark">
+                    <label class="bg-primary" for="distance">Distance</label>
+                    <div class="input-group mb-3">
+                        <input type="number" min="1" step="0.01" class="form-control" id="distance"
+                            aria-label="Distance in km">
+                        <span class="input-group-text">km</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="container bg-dark">
+                    <label class="bg-primary" for="mileage">Mileage</label>
+                    <div class="input-group mb-3">
+                        <input type="number" min="1" step="0.01" class="form-control" id="mileage"
+                            aria-label="Mileage in km per litre">
+                        <span class="input-group-text">km/ltr</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="container bg-dark">
+                    <label class="bg-primary" for="petrol">Fuel Price</label>
+                    <div class="input-group mb-3">
+                        <input type="number" min="1" step="0.01" class="form-control" id="price"
+                            aria-label="price of fuel per litre">
+                        <span class="input-group-text">₹/ltr</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="container bg-dark">
+                    <label class="bg-primary" for="sharing">Persons</label>
+                    <div class="input-group mb-3">
+                        <input type="number" min="1" step="1" placeholder="Optional" class="form-control" id="people"
+                            aria-label="No. of people sharing cost">
+                        <span class="input-group-text">No.</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div class="container bg-dark">
-        <label class="bg-primary" for="mileage">Mileage</label>
-        <div class="input-group mb-3">
-            <input type="number" min="1" step="0.01" class="form-control" id="mileage"
-                aria-label="Mileage in km per litre">
-            <span class="input-group-text">km/ltr</span>
+        <p class="bg-secondary"> Cost for Roundtrip</p>
+        <div class="row">
+            <div class="col-6">
+                <div class="container bg-dark">
+                    <label class="bg-danger" for="total-cost-roundtrip">Fuel Cost</label>
+                    <div id="total-cost-roundtrip" class="output-display"><span>₹</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="container bg-dark">
+                    <label class="bg-danger" for="cost-per-person-roundtrip">Cost/Person</label>
+                    <div id="cost-per-person-roundtrip" class="output-display"><span>₹</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-
-
-    <div class="container bg-dark">
-        <label class="bg-primary" for="petrol">Fuel Cost</label>
-        <div class="input-group mb-3">
-            <input type="number" min="1" step="0.01" class="form-control" id="price"
-                aria-label="price of fuel per litre">
-            <span class="input-group-text">₹</span>
-        </div>
-    </div>
-
-    <div class="container bg-dark">
-        <label class="bg-primary" for="sharing">Persons</label>
-        <div class="input-group mb-3">
-            <input type="number" min="1" step="1" placeholder="Optional" class="form-control" id="people"
-                aria-label="No. of people sharing cost">
-            <span class="input-group-text">No.</span>
-        </div>
-
     </div>
 
     <hr>
-    <div class="container output-container bg-dark">
-
-        <label class="bg-primary" for="total-cost-roundtrip">Fuel Cost Roundtrip</label>
-        <div id="total-cost-roundtrip" class="output-display"><span>₹</span>
-        </div>
-    </div>
-    <div class="container output-container bg-dark">
-        <label class="bg-primary" for="cost-per-person-roundtrip">Cost/Person Roundtrip</label>
-        <div id="cost-per-person-roundtrip" class="output-display"><span>₹</span>
-        </div>
-
-    </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">

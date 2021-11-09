@@ -7,29 +7,40 @@ body{
     margin: 0;
     color:white;
 }
+.navbar-brand {
+    font-weight: bold;
+}
 
-.container {
-    width: 400px;
+.container-main {
+    width: 500px;
     max-width: 90%;
-    margin:auto;
-    margin-bottom: 0.5rem;
-    text-align: start;
-    border-radius: 0.3rem;
-    padding: 0.5rem;
+    margin: auto;
+
+
+}
+.container{
+    padding:1rem;
+    margin:0.7rem 0;
+    border-radius: 0.2rem;
 }
 
 hr {
-    width:400px;
+    width:500px;
     margin:1rem auto;
     max-width: 90%;
 }
 
-.output-container{
-    margin-top: 0.5rem;
-}
+
+
 
 label{
     margin-bottom: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.2rem;
+}
+p{
+    width: fit-content;
+    margin:1rem auto;
     padding: 0.2rem 0.5rem;
     border-radius: 0.2rem;
 }
