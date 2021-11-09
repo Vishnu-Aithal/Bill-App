@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Expense Calculator</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,9 +31,22 @@
         </div>
       </nav>
 
-      <div class="container">
+      <div class="container bg-dark">
+          
           <label for="distance">Distance in km between the places</label>
-          <input type="text" name="distance">
+          <input id="distance" type="number" min="1" step="0.05" name="distance">
+          <label for="mileage">Mileage in km/ltr</label>
+          <input id="mileage" type="number" min="1" step="0.05" name="mileage">
+          <label for="petrol">Fuel cost in Rs</label>
+          <input id="price" type="number" min="1" step="0.05" name="petrol">
+          <label for="sharing">No. of people Sharing Cost</label>
+          <input id="people" type="number" min="1" step="0.05" name="sharing">
+      </div>
+      <div class="container output-container bg-dark">
+          <label for="total-cost-roundtrip">Fuel Cost Roundtrip</label>
+          <div class="total-cost-roundtrip"></div>
+          <label for="cost-per-person-roundtrip">Cost/Person Roundtrip</label>
+          <div class="cost-per-person-roundtrip"></div>
       </div>
 
 
