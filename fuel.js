@@ -1,7 +1,7 @@
 const outputContainer = document.querySelector(".output-container");
-const totalCostRoundtrripDisplay = document.querySelector(".total-cost-roundtrip");
-const costPerPersonDisplay = document.querySelector(".cost-per-person-roundtrip");
-const inputs = document.querySelectorAll("input");
+const totalCostRoundtrripDisplay = document.querySelector("#total-cost-roundtrip");
+const costPerPersonDisplay = document.querySelector("#cost-per-person-roundtrip");
+const inputs = document.querySelectorAll(".input");
 
 
 inputs.forEach(input => input.previousValidValue = "")
@@ -25,10 +25,8 @@ inputs.forEach(input => {
         if (input.validity.valid) {
             input.previousValidValue = inputValue;
             if (allInputsEntered()) {
-                calculate(inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value)
-                btnCalculate.disabled = false
+                calculate(inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value);
             } else {
-                btnCalculate.disabled = true
                 clearDisplay();
             }
         } else {
@@ -38,21 +36,21 @@ inputs.forEach(input => {
 })
 
 const displayResult = function (result) {
-    totalCostRoundtrripDisplay.innerText = result.totalCost+" ₹";
-    costPerPersonDisplay.innerText = result.costPerPerson+" ₹";
+    totalCostRoundtrripDisplay.innerHTML = result.totalCost+"<span>₹</span>";
+    costPerPersonDisplay.innerHTML = result.costPerPerson+"<span>₹</span>";
 }
 
 const clearDisplay = function () {
-    totalCostRoundtrripDisplay.innerText = "";
-    costPerPersonDisplay.innerText = "";
+    totalCostRoundtrripDisplay.innerHTML = "<span>₹</span>";
+    costPerPersonDisplay.innerHTML = "<span></span>";
 }
 
 const calculate = function (distance, mileage, fuelPrice, person) {
     let result = {};
-    result.totalCost = ((distance * 2) * fuelPrice / mileage).toFixed(2);
-    console.log(Number(person))
+    result.totalCost = (distance * 2) * fuelPrice / mileage;
     Number(person) === 0 ? result.persons = 1 : result.persons = person;
     result.costPerPerson = (result.totalCost / result.persons).toFixed(2);
+    result.totalCost = result.totalCost.toFixed(2);
     displayResult(result);
 }
 
