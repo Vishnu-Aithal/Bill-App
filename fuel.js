@@ -10,7 +10,7 @@ inputs.forEach(input => input.previousValidValue = "")
 const allInputsEntered = function () {
     let entries = []
     inputs.forEach((input) => {
-        if (input.id !== "people") entries.push(Number(input.value))
+        if (input.id !== "people" && input.id !== "toll-price") entries.push(Number(input.value))
     });
     if (entries.includes(0)) {
         return false;
@@ -25,7 +25,7 @@ inputs.forEach(input => {
         if (input.validity.valid) {
             input.previousValidValue = inputValue;
             if (allInputsEntered()) {
-                calculate(inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value);
+                calculate(Number(inputs[0].value), Number(inputs[1].value), Number(inputs[2].value), Number(inputs[3].value), Number(inputs[4].value));
             } else {
                 clearDisplay();
             }
@@ -45,10 +45,11 @@ const clearDisplay = function () {
     costPerPersonDisplay.innerHTML = "<span></span>";
 }
 
-const calculate = function (distance, mileage, fuelPrice, person) {
+const calculate = function (distance, mileage, fuelPrice, person, tollPrice) {
     let result = {};
-    result.totalCost = (distance * 2) * fuelPrice / mileage;
     Number(person) === 0 ? result.persons = 1 : result.persons = person;
+    Number(tollPrice) === 0 ? result.tollPrice = 0 : result.tollPrice = tollPrice;
+    result.totalCost = ((distance * 2) * fuelPrice / mileage) + result.tollPrice;
     result.costPerPerson = (result.totalCost / result.persons).toFixed(2);
     result.totalCost = result.totalCost.toFixed(2);
     displayResult(result);
