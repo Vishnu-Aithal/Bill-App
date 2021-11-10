@@ -36,13 +36,13 @@ inputs.forEach(input => {
 })
 
 const displayResult = function (result) {
-    totalCostRoundtrripDisplay.innerHTML = result.totalCost+"<span>₹</span>";
-    costPerPersonDisplay.innerHTML = result.costPerPerson+"<span>₹</span>";
+    totalCostRoundtrripDisplay.innerText = result.totalCost;
+    costPerPersonDisplay.innerText = result.costPerPerson;
 }
 
 const clearDisplay = function () {
-    totalCostRoundtrripDisplay.innerHTML = "<span>₹</span>";
-    costPerPersonDisplay.innerHTML = "<span></span>";
+    totalCostRoundtrripDisplay.innerText = "";
+    costPerPersonDisplay.innerText = "";
 }
 
 const calculate = function (distance, mileage, fuelPrice, person, tollPrice) {
