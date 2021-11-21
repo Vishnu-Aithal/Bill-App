@@ -3,7 +3,12 @@ const costPerPersonDisplay = document.querySelector("#cost-per-person-roundtrip"
 const inputs = document.querySelectorAll("input");
 
 
-inputs.forEach(input => input.previousValidValue = "")
+inputs.forEach((input, index) => {
+    input.previousValidValue = ""
+    input.addEventListener("keyup", (e)=>{
+        if (e.key === "Enter" && index < inputs.length-1) inputs[index+1].focus();
+    })
+})
 
 
 const allInputsEntered = function () {
