@@ -45,6 +45,7 @@ const addItem = function () {
     item.append(btnRemove);
     itemList.append(item);
     calculateTotal();
+    itemInputs[0].focus();
 }
 
 itemInputs.forEach(input => {
@@ -61,6 +62,14 @@ itemInputs.forEach(input => {
             input.value = input.previousValidValue;
         }
     }
+})
+
+itemInputs[0].addEventListener("keyup", (e)=>{
+    if(e.key === "Enter") itemInputs[1].focus();
+})
+
+itemInputs[1].addEventListener('keyup', (e)=>{
+    if(e.key === "Enter" && !btnAdd.disabled) addItem();
 })
 
 taxInputs.forEach(input => {
