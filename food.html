@@ -36,6 +36,16 @@
     <div class="container-main">
         <hr>
         <div class="row gx-2 gy-2">
+
+            <div class="col-12">
+
+                <div class="input-group">
+                    <span class="input-group-text">Customer</span>
+                    <input type="text" id="item-name" class="form-control customer-name" aria-label="Item Name">
+                </div>
+
+            </div>
+
             <div class="col-12">
 
                 <div class="input-group">
@@ -44,6 +54,7 @@
                 </div>
 
             </div>
+
             <div class="col-12">
 
                 <div class="input-group">
@@ -81,7 +92,8 @@
 
         <hr>
 
-        <ul class="items"><div class="list-header bg-dark">Items</div>
+        <ul class="items">
+            <div class="list-header bg-dark">Items</div>
         </ul>
         <hr>
         <div class="output-display">
@@ -90,6 +102,15 @@
         </div>
         <hr>
 
+        <div class="clear-buttons">
+            <button class="btn btn-primary btn-large" id="btn-save-clear" disabled>Save and Clear</button>
+            <button class="ms-auto btn btn-secondary btn-large" id="btn-clear">Clear</button>
+            <button class="ms-auto btn btn-secondary btn-large" id="btn-clear-history">Clear History</button>
+        </div>
+        <hr>
+        <ul class="history">
+            <div class="list-header bg-dark">History</div>
+        </ul>
     </div>
 
 
