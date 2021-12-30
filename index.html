@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fuel-Expense</title>
+    <title>Bill-App</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -14,108 +14,95 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Fuel Expense Calculator</a>
-            <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/index.html">Fuel</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/food.html">Food</a>
-                    </li>
-                </ul>
-            </div>
+            <a class="navbar-brand mx-auto" href="#">Bill App</a>  
         </div>
     </nav>
 
     <div class="container-main">
         <hr>
-        <div class="row gx-2">
+        <div class="row gx-2 gy-2">
+
+            <div class="col-12">
+
+                <div class="input-group">
+                    <span class="input-group-text">Customer</span>
+                    <input type="text" id="item-name" class="form-control customer-name" aria-label="Item Name">
+                </div>
+
+            </div>
+
+            <div class="col-12">
+
+                <div class="input-group">
+                    <span class="input-group-text">Item</span>
+                    <input type="text" id="item-name" class="form-control item-input" aria-label="Item Name">
+                </div>
+
+            </div>
+
+            <div class="col-12">
+
+                <div class="input-group">
+                    <span class="input-group-text">Price</span>
+                    <input type="number" id="item-price" min="1" step="0.01" class="form-control item-input"
+                        aria-label="Item Cost">
+                    <span class="input-group-text">₹</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button disabled id="btn-add" class="btn btn-primary w-25 my-2 ms-auto d-block">Add Item</button>
+
+        <div class="row gx-2 gy-2">
             <div class="col-6">
-                <div class="container bg-dark">
-                    <label class="" for="distance">Distance</label>
-                    <div class="input-group">
-                        <input type="number" min="1" step="0.01" class="form-control" id="distance"
-                            aria-label="Distance in km">
-                        <span class="input-group-text">km</span>
-                    </div>
+                <div class="input-group">
+                    <span class="input-group-text">Tax</span>
+                    <input type="number" id="tax" min="1" step="0.01" class="form-control tax-input"
+                        aria-label="Tax Percentage">
+                    <span class="input-group-text">%</span>
                 </div>
             </div>
             <div class="col-6">
-                <div class="container bg-dark">
-                    <label class="" for="mileage">Mileage</label>
-                    <div class="input-group ">
-                        <input type="number" min="1" step="0.01" class="form-control" id="mileage"
-                            aria-label="Mileage in km per litre">
-                        <span class="input-group-text">km/ltr</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="container bg-dark">
-                    <label class="" for="petrol">Fuel Price</label>
-                    <div class="input-group ">
-                        <input type="number" min="1" step="0.01" class="form-control" id="price"
-                            aria-label="price of fuel per litre">
-                        <span class="input-group-text">₹/ltr</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="container bg-dark">
-                    <label class="" for="sharing">Persons</label>
-                    <div class="input-group ">
-                        <input type="number" min="1" step="1" placeholder="Optional" class="form-control" id="people"
-                            aria-label="No. of people sharing cost">
-                        <span class="input-group-text">No.</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-9 mx-auto">
-                <div class="container bg-dark">
-                    <label class="" for="sharing">Total Toll Cost</label>
-                    <div class="input-group ">
-                        <input type="number" min="1" step="1" placeholder="Optional" class="form-control" id="toll-price"
-                            aria-label="No. of people sharing cost">
-                        <span class="input-group-text">₹</span>
-                    </div>
+                <div class="input-group">
+                    <span class="input-group-text">S.Charge</span>
+                    <input type="number" id="tax" min="1" step="0.01" class="form-control tax-input"
+                        aria-label="Tax Percentage">
+                    <span class="input-group-text">₹</span>
                 </div>
             </div>
         </div>
 
         <hr>
 
-        <p> Cost for Roundtrip</p>
-        <div class="row gx-2">
-            <div class="col-6">
-                <div class="container bg-dark">
-                    <label class="" for="total-cost-roundtrip">Total Cost</label>
-                    <div class="output-display"><div id="total-cost-roundtrip" class="output-value"></div><span class="output-unit">₹</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="container bg-dark">
-                    <label class="" for="cost-per-person-roundtrip">Cost/Person</label>
-                    <div class="output-display"><div id="cost-per-person-roundtrip" class="output-value"></div><span class="output-unit">₹</span>
-                    </div>
-                </div>
-            </div>
+        <ul class="items">
+            <div class="list-header bg-dark">Items</div>
+        </ul>
+        <hr>
+        <div class="output-display">
+            <span class="output-header">Total</span>
+            <div class="output-value"></div><span class="output-unit">₹</span>
         </div>
         <hr>
+
+        <div class="clear-buttons">
+            <button class="btn btn-primary btn-large" id="btn-save-clear" disabled>Save and Clear</button>
+            <button class="ms-auto btn btn-secondary btn-large" id="btn-clear">Clear</button>
+            <button class="ms-auto btn btn-secondary btn-large" id="btn-clear-history">Clear History</button>
+        </div>
+        <hr>
+        <ul class="history">
+            <div class="list-header bg-dark">History</div>
+        </ul>
     </div>
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
-    <script src="fuel.js"></script>
+    <script src="food.js"></script>
 </body>
 
 </html>
